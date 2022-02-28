@@ -46,7 +46,38 @@ alert(`Queda un total de ${noches} noches disponibles.`);
 
 
 let costoPorNochePorPersona = 1500;
+let costo = 0;
 
 costo = costoPorNochePorPersona * totalReservas * cantidad;
 
-alert(`Su reserva tendrá un costo de $ ${costo} `)
+alert(`Su reserva tendrá un costo de $ ${costo} `);
+
+
+let metodoDePago = prompt("Indicá el metodo de pago: credito, debito o trasferencia");
+
+
+while (metodoDePago != "") {
+    switch (metodoDePago.toLocaleUpperCase()) {
+        case ("CREDITO"):
+            alert("Hasta 1, 3 y 6 pagos sin interés");
+            let cuotas = prompt("¿Cuantas cuotas querés?");
+            if (cuotas === "1") {
+                alert(`El valor de la cuota es $ ${costo}`);
+            } else if (cuotas === "3") {
+                alert(`El valor de la cuota es $ ${costo / 3}`);
+            } else if (cuotas === "6") {
+                alert(`El valor de la cuota es $ ${costo / 6}`);
+            }
+
+
+        case ("DEBITO O TRASFERENCIA"):
+            alert("Con débito tienes un 10% de descuento y con trasferencia un 20%, con que deseas abonar?");
+            let metodo = prompt("Debito o trasferencia?");
+            if (metodo = "DEBITO") {
+                alert(`El valor de la cuota es $ ${costo * 0,9}`);
+            } else if (metodo = "TRANSFERENCIA") {
+                alert(`El valor de la cuota es $ ${costo * 0,8}`);
+            }
+
+    }
+}
